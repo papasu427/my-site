@@ -38,6 +38,15 @@
     "vue-template-compiler": "^2.6.11",
     "yorkie": "^2.0.0"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint --fix",
+      "git add"
+    ]
+  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -52,15 +61,6 @@
       "parser": "babel-eslint"
     },
     "rules": {}
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "vue-cli-service lint --fix",
-      "git add"
-    ]
   },
   "browserslist": [
     "> 1%",
