@@ -1,19 +1,29 @@
 <template>
   <div>
-    <div ref="test" class="fullPageScroll">
-      <HelloWorld id="section1" class="section section1" :num="1" />
-      <HelloWorld id="section2" class="section section2" :num="2" />
-      <HelloWorld id="section3" class="section section3" :num="3" />
-      <HelloWorld id="section4" class="section section4" :num="4" />
+    <div class="fullPageScroll">
+      <HelloWorld id="section1" class="section" :num="1" />
+      <HelloWorld id="section2" class="section" :num="2" />
+      <HelloWorld id="section3" class="section" :num="3" />
+      <HelloWorld id="section4" class="section" :num="4" />
     </div>
 
+    <div class="update-text">Update : 2020.05.20</div>
+
     <nav ref="pagination" class="pagination">
-      <a
-        v-for="pagination of page"
-        :key="pagination.id"
-        @click.prevent="smoothScroll($event)"
-        :href="['#section' + pagination.id]"
-      ></a>
+      <ul>
+        <li v-for="pagination of page" :key="pagination.id">
+          <a
+            @click.prevent="smoothScroll($event)"
+            :href="['#section' + pagination.id]"
+            >{{ pagination.iconText }}</a
+          >
+          <p class="pagination-sub-text-size">{{ pagination.title }}</p>
+          <div
+            v-if="pagination.id !== page.length"
+            class="pagination-line"
+          ></div>
+        </li>
+      </ul>
     </nav>
   </div>
 </template>
@@ -29,23 +39,26 @@ export default {
   },
   data() {
     return {
-      // test: this.$refs.pagination,
       page: [
         {
+          id: 1,
           title: "HOME",
-          id: 1
+          iconText: "H"
         },
         {
+          id: 2,
           title: "ABOUT",
-          id: 2
+          iconText: "A"
         },
         {
+          id: 3,
           title: "WORK",
-          id: 3
+          iconText: "W"
         },
         {
+          id: 4,
           title: "CONTACT",
-          id: 4
+          iconText: "C"
         }
       ]
     };
@@ -69,29 +82,39 @@ export default {
         if (!entry.isIntersecting) {
           this.deactivatePagination(entry.target);
         }
-
-        if (entry.isIntersecting && entry.target.id === "section1") {
-          this.observerRoot.style.backgroundColor = "#f0f4f4";
-        } else if (entry.isIntersecting && entry.target.id === "section2") {
-          this.observerRoot.style.backgroundColor = "#f3d9b7";
-        } else if (entry.isIntersecting && entry.target.id === "section3") {
-          this.observerRoot.style.backgroundColor = "#d6efdc";
-        } else if (entry.isIntersecting && entry.target.id === "section4") {
-          this.observerRoot.style.backgroundColor = "#f9f9d9";
-        }
       });
     },
     activatePagination: function(element) {
       const newActiveIndex = document.querySelector(
         "a[href='#" + element.id + "']"
       );
-      newActiveIndex.classList.add("active");
+      if (element.id === "section1") {
+        this.observerRoot.style.backgroundColor = "#f0f4f4";
+        newActiveIndex.classList.add("active1");
+      } else if (element.id === "section2") {
+        this.observerRoot.style.backgroundColor = "#ffdcff";
+        newActiveIndex.classList.add("active2");
+      } else if (element.id === "section3") {
+        this.observerRoot.style.backgroundColor = "#d6efdc";
+        newActiveIndex.classList.add("active3");
+      } else if (element.id === "section4") {
+        newActiveIndex.classList.add("active4");
+        this.observerRoot.style.backgroundColor = "#f9f9d9";
+      }
     },
     deactivatePagination: function(element) {
       const newActiveIndex = document.querySelector(
         "a[href='#" + element.id + "']"
       );
-      newActiveIndex.classList.remove("active");
+      if (element.id === "section1") {
+        newActiveIndex.classList.remove("active1");
+      } else if (element.id === "section2") {
+        newActiveIndex.classList.remove("active2");
+      } else if (element.id === "section3") {
+        newActiveIndex.classList.remove("active3");
+      } else if (element.id === "section4") {
+        newActiveIndex.classList.remove("active4");
+      }
     }
   },
   mounted() {
@@ -107,3 +130,93 @@ export default {
   }
 };
 </script>
+<style scoped>
+.section {
+  width: 100%;
+  height: 100vh;
+  padding: 0 10%;
+  scroll-snap-align: start;
+}
+
+.update-text {
+  position: fixed;
+  top: 1vh;
+  right: 32px;
+  font-size: 1vmax;
+}
+
+.fullPageScroll {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: 1s ease-in-out;
+  background: linear-gradient(
+    to right,
+    rgba(76, 122, 192, 0) 0% 50%,
+    rgb(255, 255, 255) 50% 100%
+  );
+}
+
+.pagination {
+  position: fixed;
+  top: 50%;
+  right: 32px;
+  transform: translateY(-50%);
+}
+
+.pagination a {
+  display: block;
+  width: 2vmax;
+  height: 2vmax;
+  border-radius: 50%;
+  background-color: #f0f4f4;
+  transition: background-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  border: solid 0.5vw #eeeeee;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  text-decoration: none;
+  text-decoration-color: black;
+  font-size: 1.2vw;
+  color: rgb(24, 24, 24);
+  font-weight: 300;
+  line-height: 2vw;
+  margin: 0 auto;
+}
+
+.pagination a.active1 {
+  border-color: #7399f9;
+  background-color: #f0f4f4;
+}
+
+.pagination a.active2 {
+  border-color: #f39af3;
+  background-color: #ffdcff;
+}
+
+.pagination a.active3 {
+  border-color: #b8edc5;
+  background-color: #d6efdc;
+}
+
+.pagination a.active4 {
+  border-color: #f0e463;
+  background-color: #f9f9d9;
+}
+
+.pagination-sub-text-size {
+  font-size: 1vw;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.pagination-line {
+  margin: 1vmin auto;
+  width: 1px;
+  height: 15px;
+  background-color: black;
+}
+</style>
