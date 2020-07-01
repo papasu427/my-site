@@ -2,8 +2,8 @@
   <div>
     <div class="fullPageScroll">
       <HelloWorld id="section1" class="section" :num="1" />
-      <HelloWorld id="section2" class="section" :num="2" />
-      <HelloWorld id="section3" class="section" :num="3" />
+      <About id="section2" class="section" :num="2" />
+      <Work id="section3" class="section" :num="3" />
       <HelloWorld id="section4" class="section" :num="4" />
     </div>
 
@@ -31,11 +31,15 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import About from "@/components/About.vue";
+import Work from "@/components/Work.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    HelloWorld,
+    About,
+    Work
   },
   data() {
     return {

@@ -1,13 +1,18 @@
 <template>
-  <div class="container">
+  <div class="container position-re">
+    <div class="scrool-box">
+      <div class="scrool-arrow"></div>
+      <p class="scrool-text">scrool</p>
+    </div>
+
     <section class="container-left container-left-add-class">
-      <!-- 左カラム -->
       <div class="top-name">DAIKI TSUJIMOTO</div>
       <div class="top-subscription">
         SITE DESIGN / VIDEO EDITING / ANIMATION DESIGN / UI/UX DESIGN / CODING -
         HTML5, CSS, JavaScript
       </div>
     </section>
+
     <section class="container-right height100">
       <ul class="textbox">
         <li>ウェブデザイン</li>
@@ -34,12 +39,12 @@ export default {
   left: -4vw;
 }
 .top-name {
-  font-size: 2em;
+  font-size: 1.9em;
   margin-bottom: 2vmin;
   font-weight: 300;
 }
 .top-subscription {
-  font-size: 1em;
+  font-size: 0.9em;
   width: 90%;
   font-weight: 300;
   line-height: 1.4;
@@ -66,6 +71,45 @@ export default {
 .textbox li:last-child {
   margin-left: 0;
   background-color: #fff;
+}
+
+.scrool-box {
+  position: absolute;
+  bottom: 8vmax;
+  text-align: center;
+  animation: arrow-down 4s ease-in-out 0.5s infinite normal;
+}
+@keyframes arrow-down {
+  0% {
+    transform: translateY(3vmax);
+    opacity: 0;
+  }
+
+  40% {
+    transform: translateY(5vmax);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(5vmax);
+    opacity: 0;
+  }
+}
+
+.scrool-arrow {
+  display: inline-block;
+  width: 1.3vmax;
+  height: 7vmax;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  transform: skewY(-45deg);
+  margin-bottom: 1vmax;
+  margin-left: 1vmax;
+}
+
+.scrool-text {
+  font-size: 1em;
+  font-weight: 200;
 }
 
 @media (max-height: 560px) {

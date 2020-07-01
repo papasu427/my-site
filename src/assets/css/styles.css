@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Verdana, "メイリオ", Meiryo, sans-serif;
+  font-family: 'Open Sans',-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Verdana, "メイリオ", Meiryo, sans-serif;
   -webkit-overflow-scrolling: touch;
   list-style-type: none
 }
 
 b, strong, .bold{
-	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI semibold", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Segoe UI", Verdana, "メイリオ", Meiryo, sans-serif;
+	font-family: 'Open Sans',-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI semibold", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Segoe UI", Verdana, "メイリオ", Meiryo, sans-serif;
 }
 
 _:lang(x)::-ms-backdrop, .selector {
@@ -36,4 +36,12 @@ _:lang(x)::-ms-backdrop, .selector {
 
 .height100{
   height: 100%;
+}
+
+.position-re{
+  position: relative;
+}
+
+.center{
+  margin: 0 auto;
 }
