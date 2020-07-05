@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="fullPageScroll">
-      <HelloWorld id="section1" class="section" :num="1" />
+      <Home id="section1" class="section" :num="1" />
       <About id="section2" class="section" :num="2" />
       <Work id="section3" class="section" :num="3" />
-      <HelloWorld id="section4" class="section" :num="4" />
+      <Contact id="section4" class="section" :num="4" />
     </div>
 
     <div class="update-text">Update : 2020.05.20</div>
@@ -30,16 +30,18 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Home from "@/components/Home.vue";
 import About from "@/components/About.vue";
 import Work from "@/components/Work.vue";
+import Contact from "@/components/Contact.vue";
 
 export default {
-  name: "Home",
+  name: "Top",
   components: {
-    HelloWorld,
+    Home,
     About,
-    Work
+    Work,
+    Contact
   },
   data() {
     return {
@@ -138,7 +140,6 @@ export default {
 .section {
   width: 100%;
   height: 100vh;
-  padding: 0 10%;
   scroll-snap-align: start;
 }
 
@@ -172,22 +173,21 @@ export default {
 
 .pagination a {
   display: block;
-  width: 2vmax;
-  height: 2vmax;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background-color: #f0f4f4;
   transition: background-color 0.2s linear;
   transition: border-color 0.2s linear;
-  border: solid 0.5vw #eeeeee;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
+  border: solid 6px #eeeeee;
   box-sizing: content-box;
   text-decoration: none;
+  -webkit-text-decoration-color: black;
   text-decoration-color: black;
-  font-size: 1.2vw;
+  font-size: 1em;
   color: rgb(24, 24, 24);
   font-weight: 300;
-  line-height: 2vw;
+  line-height: 1.8;
   margin: 0 auto;
 }
 
@@ -212,7 +212,7 @@ export default {
 }
 
 .pagination-sub-text-size {
-  font-size: 1vw;
+  font-size: 0.7em;
   font-weight: 500;
   margin-top: 4px;
 }

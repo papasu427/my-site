@@ -1,17 +1,22 @@
 <template>
-  <div class="container position-re">
-    <section class="container-left container-left-add-class">
-      <div class="top-name">
-        <p class="top-name-boder">WORK</p>
+  <div class="wrapper position-re">
+    <section class="wrapper-left">
+      <div class="top-title">
+        <div class="top-name">
+          <p class="top-name-boder">WORK</p>
+        </div>
+        <div class="top-subscription">これまでに携わった業務</div>
+        <!-- <a href="#" class="btn-flat-border">BUTTON</a> -->
+        <myButton class="mt-5">業務一覧</myButton>
       </div>
-      <div class="top-subscription">これまでに携わった業務</div>
-      <a href="#" class="btn-flat-border">BUTTON</a>
     </section>
 
-    <section class="container-right">
-      <ul>
+    <section class="wrapper-right">
+      <ul class="text-box">
         <li class="test" v-for="(work, index) of workList" :key="index">
-          <img :src="work.test" width="100%" />
+          <span>
+            <img :src="work.test" />
+          </span>
         </li>
       </ul>
     </section>
@@ -20,9 +25,13 @@
 
 <script>
 import sq from "@/assets/img/squear.png";
+import myButton from "@/components/MyButton.vue";
 
 export default {
   name: "Work",
+  components: {
+    myButton
+  },
   props: {
     msg: String,
     num: Number
@@ -47,32 +56,69 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 ul {
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 60%;
-  margin: 0 10% 0 28%;
+  width: 40vmin;
+}
+.top-title {
+  text-align: left;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
 }
 .test {
-  width: 50%;
+  width: 49.5%;
   list-style: none;
-  padding-right: 3px;
+  border: solid 1px #cfcfcf;
+  margin-bottom: 2px;
+  /* 正方形にするのに必要な部分 */
+  height: auto;
+  position: relative;
 }
-.btn-flat-border {
+.test:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* ここを100％にすることで正方形になる */
+}
+.test span {
+  /* 正方形にするのに必要な部分 */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 中央寄せ */
+  text-align: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+.test span:before {
+  content: "";
+  height: 100%;
+  vertical-align: middle;
+  width: 0px;
   display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
-  border-radius: 3px;
-  transition: 0.4s;
+}
+.test span > * {
+  vertical-align: middle;
+  display: inline-block;
 }
 
-.btn-flat-border:hover {
-  background: #67c5ff;
-  color: white;
-}
-.container-left-add-class {
-  left: -4vw;
+.test span img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 .top-name-boder {
   padding-bottom: 3vmin;
@@ -92,14 +138,12 @@ ul {
   letter-spacing: 0.3em;
 }
 .text-box {
-  padding: 0 2% 0 10%;
-  margin: 0 auto;
-  line-height: 2em;
-  font-size: 0.7em;
-  font-weight: 600;
-  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
 }
-
 @media (max-height: 560px) {
   .top-name {
     font-size: 5vh;

@@ -1,7 +1,7 @@
 <template>
-  <button class="button is-primary" @click="onClick">
+  <a class="btn-flat-border" @click="onClick">
     <slot></slot>
-  </button>
+  </a>
 </template>
 
 <script>
@@ -17,13 +17,18 @@ export default {
 </script>
 
 <style scoped>
-button {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #ffffff;
-  cursor: pointer;
-  font-size: 15pt;
-  padding: 3px 10px;
-  margin: 10px;
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.4em 3em;
+  text-decoration: none;
+  color: #424242;
+  border: solid 1px #424242;
+  transition: 0.4s;
+  font-size: 0.8em;
+}
+
+.btn-flat-border:hover {
+  background: #424242;
+  color: white;
 }
 </style>

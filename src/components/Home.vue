@@ -1,19 +1,21 @@
 <template>
-  <div class="container position-re">
+  <div class="wrapper position-re">
     <div class="scrool-box">
       <div class="scrool-arrow"></div>
       <p class="scrool-text">scrool</p>
     </div>
 
-    <section class="container-left container-left-add-class">
-      <div class="top-name">DAIKI TSUJIMOTO</div>
-      <div class="top-subscription">
-        SITE DESIGN / VIDEO EDITING / ANIMATION DESIGN / UI/UX DESIGN / CODING -
-        HTML5, CSS, JavaScript
+    <section class="wrapper-left">
+      <div class="top-title">
+        <div class="top-name">DAIKI TSUJIMOTO</div>
+        <div class="top-subscription">
+          SITE DESIGN / VIDEO EDITING / ANIMATION DESIGN / UI/UX DESIGN / CODING
+          - HTML5, CSS, JavaScript
+        </div>
       </div>
     </section>
 
-    <section class="container-right height100">
+    <section class="wrapper-right">
       <ul class="textbox">
         <li>ウェブデザイン</li>
         <li>動画広告・編集</li>
@@ -35,8 +37,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.container-left-add-class {
-  left: -4vw;
+.top-title {
+  text-align: left;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
 }
 .top-name {
   font-size: 1.9em;
@@ -55,24 +63,21 @@ export default {
   writing-mode: vertical-rl;
   text-orientation: upright;
   top: 50%;
-  left: 56%;
+  left: 44%;
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   text-align: left;
   font-size: 2em;
   font-weight: bold;
 }
-
 .textbox li {
   margin-left: 4vmin;
   background-color: yellow;
 }
-
 .textbox li:last-child {
   margin-left: 0;
   background-color: #fff;
 }
-
 .scrool-box {
   position: absolute;
   bottom: 8vmax;
@@ -84,18 +89,15 @@ export default {
     transform: translateY(3vmax);
     opacity: 0;
   }
-
   40% {
     transform: translateY(5vmax);
     opacity: 1;
   }
-
   100% {
     transform: translateY(5vmax);
     opacity: 0;
   }
 }
-
 .scrool-arrow {
   display: inline-block;
   width: 1.3vmax;
@@ -106,12 +108,10 @@ export default {
   margin-bottom: 1vmax;
   margin-left: 1vmax;
 }
-
 .scrool-text {
   font-size: 1em;
   font-weight: 200;
 }
-
 @media (max-height: 560px) {
   .top-name {
     font-size: 5vh;

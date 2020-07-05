@@ -1,12 +1,10 @@
 <template>
   <div class="wrapper position-re">
-    <section class="wrapper-left">
-      <div class="top-title">
-        <div class="top-name">
-          <p class="top-name-boder">ABOUT</p>
-        </div>
-        <div class="top-subscription">コンセプト・受注業務について</div>
+    <section class="wrapper-left wrapper-left-add-class">
+      <div class="top-name">
+        <p class="top-name-boder">ABOUT</p>
       </div>
+      <div class="top-subscription">コンセプト・受注業務について</div>
     </section>
 
     <section class="wrapper-right">
@@ -42,16 +40,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.top-title {
-  text-align: left;
-  width: 70%;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+.wrapper-left-add-class {
+  left: -4vw;
 }
-
 .top-name-boder {
   padding-bottom: 3vmin;
   margin-bottom: 3vmin;
@@ -70,15 +61,12 @@ export default {
   letter-spacing: 0.3em;
 }
 .text-box {
+  padding: 0 2% 0 10%;
+  margin: 0 auto;
   line-height: 2em;
   font-size: 0.7em;
   font-weight: 600;
   text-align: left;
-  position: absolute;
-  top: 50%;
-  left: 44%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
 @media (max-height: 560px) {
