@@ -131,4 +131,14 @@ export default {
     font-size: 4vh;
   }
 }
+
+@media screen and (min-width: 〇〇px) {
+  /* スタイル */
+}
+
+@media screen and (max-width: 959px) {
+  .top-title {
+    text-align: center;
+  }
+}
 </style>
