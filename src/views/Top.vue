@@ -9,7 +9,7 @@
 
     <div class="update-text">Update : 2020.05.20</div>
 
-    <nav ref="pagination" class="pagination">
+    <nav ref="pagination" class="pagination hidden-sm-and-down">
       <ul>
         <li v-for="pagination of page" :key="pagination.id">
           <a
@@ -222,5 +222,19 @@ export default {
   width: 1px;
   height: 15px;
   background-color: black;
+}
+@media screen and (max-width: 959px) {
+  .fullPageScroll {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: none;
+    background: rgba(255, 255, 255, 0) !important;
+  }
+  .update-text {
+    right: 20px;
+  }
 }
 </style>

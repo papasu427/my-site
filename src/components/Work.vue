@@ -2,12 +2,10 @@
   <div class="wrapper position-re">
     <section class="wrapper-left">
       <div class="top-title">
-        <div class="top-name">
-          <p class="top-name-boder">WORK</p>
-        </div>
+        <div class="top-name">WORK</div>
         <div class="top-subscription">これまでに携わった業務</div>
         <!-- <a href="#" class="btn-flat-border">BUTTON</a> -->
-        <myButton class="mt-5">業務一覧</myButton>
+        <myButton class="mt-5">業務・経歴一覧</myButton>
       </div>
     </section>
 
@@ -64,15 +62,6 @@ ul {
   flex-wrap: wrap;
   width: 40vmin;
 }
-.top-title {
-  text-align: left;
-  width: 70%;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-}
 .test {
   width: 49.5%;
   list-style: none;
@@ -126,10 +115,6 @@ ul {
   border-bottom: solid 1px black;
   display: inline-block;
 }
-.top-name {
-  font-size: 1.9em;
-  font-weight: 300;
-}
 .top-subscription {
   font-size: 0.9em;
   width: 90%;
@@ -165,6 +150,51 @@ ul {
   }
   .text-box {
     line-height: 5vh;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .top-title {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: #ffdcff;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    top: unset;
+    transform: unset;
+    -webkit-transform: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  .top-name {
+    font-size: 1.5em;
+    margin-bottom: 2vmin;
+    font-weight: 300;
+  }
+  .top-subscription[data-v-8dc7cce2] {
+    font-size: 0.5em;
+    width: 100%;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.3em;
+    /* text-align: center; */
+    margin: 0 auto;
+  }
+  .text-box {
+    position: relative;
+    left: 50%;
+    padding: 20px;
+  }
+  .wrapper-left {
+    height: 30vh !important;
+  }
+
+  .wrapper-right {
+    height: 70vh !important;
   }
 }
 </style>

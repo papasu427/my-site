@@ -53,3 +53,46 @@ _:lang(x)::-ms-backdrop,
 .center {
   margin: 0 auto;
 }
+.top-title {
+  text-align: left;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.top-name {
+  font-size: 1.9em;
+  margin-bottom: 2vmin;
+  font-weight: 300;
+}
+.top-name-boder {
+  padding-bottom: 3vmin;
+  margin-bottom: 3vmin;
+  border-bottom: solid 1px black;
+  display: inline-block;
+}
+.top-subscription {
+  font-size: 0.9em;
+  width: 90%;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+}
+@media screen and (max-width: 959px) {
+  .wrapper {
+    display: block;
+  }
+  .wrapper-left {
+    width: 100%;
+    height: 20vh;
+    position: relative;
+  }
+
+  .wrapper-right {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+  }
+}

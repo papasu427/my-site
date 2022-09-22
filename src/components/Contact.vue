@@ -2,9 +2,7 @@
   <div class="wrapper position-re">
     <section class="wrapper-left">
       <div class="top-title">
-        <div class="top-name">
-          <p class="top-name-boder">CONTACT</p>
-        </div>
+        <div class="top-name">CONTACT</div>
         <div class="top-subscription">
           お問い合わせやご依頼はお気軽に、
           <br />ご連絡ください。
@@ -67,33 +65,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.top-title {
-  text-align: left;
-  width: 70%;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-}
-.top-name {
-  font-size: 1.9em;
-  margin-bottom: 2vmin;
-  font-weight: 300;
-}
-.top-subscription {
-  font-size: 0.9em;
-  width: 90%;
-  font-weight: 300;
-  line-height: 1.4;
-  letter-spacing: 0.3em;
-}
-.top-name-boder {
-  padding-bottom: 3vmin;
-  margin-bottom: 3vmin;
-  border-bottom: solid 1px black;
-  display: inline-block;
-}
 .textbox {
   width: 70%;
   position: absolute;
